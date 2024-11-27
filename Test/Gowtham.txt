@@ -1,1 +1,12 @@
-Jayaprakash
+Jayaprakash 
+@BeforeClass
+	public void setUp() {
+		// Initialize ExtentReports
+		ExtentSparkReporter spark = new ExtentSparkReporter("extentReport.html");
+		extent = new ExtentReports();
+		extent.attachReporter(spark);
+
+		// Initialize the ChromeDriver
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+	}
